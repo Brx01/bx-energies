@@ -7,124 +7,130 @@
 <meta name="description" content="100% digitally metered LPG cooking gas refills, brand-new cylinders, and fast doorstep delivery across Amagba Junction, Amagba GRA, BIU & Benin City.">
 <meta property="og:title" content="BX Energies | Precision Cooking Gas & Delivery (₦1,350/kg)">
 <meta property="og:description" content="Order exact-weight LPG refills, new cylinders & accessories with fast Pickup + Delivery (₦2,000 flat fee) in Amagba & Benin City.">
-<meta property="og:type" content="website">
 <meta property="og:image" content="https://YOUR_USERNAME.github.io/YOUR_REPO/plant-day.jpg">
-<meta name="twitter:card" content="summary_large_image">
 <style>
 *{box-sizing:border-box}
 body{font-family:system-ui,-apple-system,sans-serif;margin:0;background:#f8fafc;color:#1e293b;line-height:1.5}
-header{background:#fff;padding:14px 20px;box-shadow:0 2px 10px rgba(0,0,0,.06);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;gap:10px}
-.logo{font-size:1.45rem;font-weight:900;background:linear-gradient(135deg,#0047AB,#00A8E8,#4ADE80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;white-space:nowrap}
-.status-pill{font-size:.78rem;font-weight:700;padding:5px 12px;border-radius:50px;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
-.status-open{background:#dcfce7;color:#15803d;border:1px solid #86efac}
-.status-closed{background:#fee2e2;color:#b91c1c;border:1px solid #fca5a5}
-.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
-.dot-open{background:#16a34a}
-.dot-closed{background:#dc2626}
-.btn{background:linear-gradient(135deg,#0047AB,#00A8E8,#4ADE80);color:#fff;padding:12px 22px;border-radius:50px;text-decoration:none;font-weight:700;border:none;cursor:pointer;display:inline-block;text-align:center;transition:opacity .2s}
-.btn:hover{opacity:.92}
-.hero{padding:35px 20px;max-width:1100px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:start}
-.hero-img-wrap{margin-top:22px;border-radius:18px;overflow:hidden;box-shadow:0 10px 25px rgba(0,71,171,.15);border:3px solid #fff;background:#e2e8f0;position:relative}
-.hero-img-wrap img{width:100%;height:270px;object-fit:cover;display:block}
-.img-badge{position:absolute;bottom:12px;left:12px;background:rgba(11,19,43,.88);color:#4ADE80;font-size:.8rem;font-weight:700;padding:6px 14px;border-radius:50px}
-.card{background:#fff;padding:24px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.08);border-top:5px solid #00A8E8}
-.presets{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0 14px}
-.p-btn,.s-btn{padding:9px 6px;border:1px solid #cbd5e1;background:#fff;border-radius:8px;font-weight:700;cursor:pointer;font-size:.86rem}
+header{background:#fff;padding:12px 16px;box-shadow:0 2px 10px rgba(0,0,0,.06);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;gap:8px;flex-wrap:wrap}
+.logo{font-size:1.35rem;font-weight:900;background:linear-gradient(135deg,#0047AB,#00A8E8,#4ADE80);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.status{font-size:.75rem;font-weight:700;padding:4px 10px;border-radius:50px;background:#dcfce7;color:#15803d;border:1px solid #86efac}
+.status.closed{background:#fee2e2;color:#b91c1c;border-color:#fca5a5}
+.btn{background:linear-gradient(135deg,#0047AB,#00A8E8,#4ADE80);color:#fff;padding:11px 20px;border-radius:50px;text-decoration:none;font-weight:700;border:none;cursor:pointer;display:inline-block;text-align:center}
+.wrap{max-width:1080px;margin:auto;padding:24px 16px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.hero-img{margin-top:18px;border-radius:16px;overflow:hidden;border:3px solid #fff;box-shadow:0 8px 20px rgba(0,71,171,.15);position:relative}
+.hero-img img{width:100%;height:240px;object-fit:cover;display:block}
+.badge{position:absolute;bottom:10px;left:10px;background:rgba(11,19,43,.88);color:#4ADE80;font-size:.78rem;font-weight:700;padding:5px 12px;border-radius:50px}
+.card{background:#fff;padding:20px;border-radius:18px;box-shadow:0 8px 25px rgba(0,0,0,.08);border-top:5px solid #00A8E8}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:10px 0}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.p-btn,.s-btn{padding:8px 4px;border:1px solid #cbd5e1;background:#fff;border-radius:8px;font-weight:700;cursor:pointer;font-size:.84rem}
 .p-btn.active,.s-btn.active{background:#e0f2fe;border-color:#00A8E8;color:#0056D2}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
-label.field-label{display:block;font-size:.88rem;font-weight:700;color:#334155;margin-bottom:4px}
-input[type=number],input[type=text],select{width:100%;padding:10px;margin:0 0 12px;border:1px solid #cbd5e1;border-radius:8px;font-size:.95rem;background:#fff}
-.cyl-box{background:#f0fdf4;border:1px solid #bbf7d0;padding:11px 12px;border-radius:10px;margin-bottom:14px}
-.cyl-toggle{display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:700;color:#15803d;font-size:.9rem;margin:0}
-.chips-wrap{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 8px}
-.chip{background:#f1f5f9;border:1px solid #cbd5e1;color:#334155;font-size:.78rem;font-weight:600;padding:5px 10px;border-radius:50px;cursor:pointer}
-.chip:hover{background:#e0f2fe;border-color:#00A8E8;color:#0056D2}
-.addons-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
-.addon-label{display:flex;align-items:center;gap:7px;cursor:pointer;font-size:.84rem;background:#f8fafc;padding:8px 10px;border-radius:8px;border:1px solid #e2e8f0;font-weight:500}
-.total-box{background:#0B132B;color:#fff;padding:16px;border-radius:12px;margin:16px 0}
-.total-row{display:flex;justify-content:space-between;font-size:.88rem;color:#cbd5e1;margin-bottom:6px}
-.total-main{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #1e293b;padding-top:10px;margin-top:6px}
-.total-main span:last-child{color:#4ADE80;font-size:1.45rem;font-weight:800}
-.section-wrap{max-width:1100px;margin:auto;padding:25px 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.feature{background:#fff;padding:22px;border-radius:15px;border:1px solid #e2e8f0}
-.feature h3{margin-top:0;color:#0047AB}
-.bulk-banner{background:linear-gradient(135deg,#0B132B 0%,#003d82 100%);color:#fff;border-radius:20px;padding:30px;display:grid;grid-template-columns:1.4fr .6fr;gap:24px;align-items:center;box-shadow:0 10px 25px rgba(11,19,43,.15)}
-.bulk-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.bulk-tag{background:rgba(255,255,255,.12);color:#4ADE80;font-size:.8rem;font-weight:600;padding:5px 12px;border-radius:50px}
-.gallery-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e2e8f0;box-shadow:0 4px 15px rgba(0,0,0,.04)}
-.gallery-card img{width:100%;height:230px;object-fit:cover;display:block;background:#e2e8f0}
-.gallery-caption{padding:16px}
-.gallery-caption h4{margin:0 0 6px;color:#0047AB}
-.gallery-caption p{margin:0;font-size:.9rem;color:#64748b}
-footer{background:#060B19;color:#94a3b8;padding:40px 20px;text-align:center;margin-top:40px}
+label.lbl{display:block;font-size:.85rem;font-weight:700;color:#334155;margin:8px 0 4px}
+input[type=number],input[type=text],select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:.95rem;background:#fff}
+.cyl-box{background:#f0fdf4;border:1px solid #bbf7d0;padding:10px;border-radius:10px;margin:10px 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 8px}
+.chip{background:#f1f5f9;border:1px solid #cbd5e1;color:#334155;font-size:.76rem;font-weight:600;padding:5px 10px;border-radius:50px;cursor:pointer}
+.addon{display:flex;align-items:center;gap:6px;font-size:.82rem;background:#f8fafc;padding:8px;border-radius:8px;border:1px solid #e2e8f0;cursor:pointer}
+.total-box{background:#0B132B;color:#fff;padding:14px;border-radius:12px;margin:14px 0}
+.t-row{display:flex;justify-content:space-between;font-size:.86rem;color:#cbd5e1;margin-bottom:5px}
+.t-main{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #1e293b;padding-top:8px;margin-top:6px;font-weight:800}
+.t-main span:last-child{color:#4ADE80;font-size:1.35rem}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.box{background:#fff;padding:18px;border-radius:14px;border:1px solid #e2e8f0}
+.bulk{background:linear-gradient(135deg,#0B132B,#003d82);color:#fff;border-radius:18px;padding:24px;display:grid;grid-template-columns:1.4fr .6fr;gap:20px;align-items:center}
+.tag{display:inline-block;background:rgba(255,255,255,.12);color:#4ADE80;font-size:.76rem;font-weight:600;padding:4px 10px;border-radius:50px;margin:4px 4px 0 0}
+.gal img{width:100%;height:210px;object-fit:cover;border-radius:12px;display:block;background:#e2e8f0}
+footer{background:#060B19;color:#94a3b8;padding:32px 16px;text-align:center;margin-top:30px;font-size:.9rem}
 footer a{color:#00A8E8;text-decoration:none}
-@media(max-width:768px){.hero,.bulk-banner{grid-template-columns:1fr}.addons-grid{grid-template-columns:1fr}header{flex-wrap:wrap;justify-content:center}}
+@media(max-width:768px){.hero,.bulk,.g2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="logo">⚡ BX energies</div>
-  <span id="live-status" class="status-pill status-open"><span class="dot dot-open"></span> Checking hours...</span>
-  <a href="https://wa.me." target="_blank" class="btn" style="padding:9px 18px;font-size:.9rem">Order Gas</a>
+  <span id="live-status" class="status">🟢 Open Now</span>
+  <a href="https://wa.me." target="_blank" class="btn" style="padding:8px 16px;font-size:.85rem">Order Gas</a>
 </header>
 
-<section class="hero">
-  <section>
-    <p style="color:#0056D2;font-weight:700;margin-top:0">📍 Amagba Junction, Amagba GRA, BIU & Benin City</p>
-    <h1 style="font-size:2.15rem;margin:10px 0;line-height:1.25">Precision-Weighed Cooking Gas Delivered Fast.</h1>
-    <p style="color:#64748b">100% digitally metered LPG refills, brand-new cylinders & accessories, and free home safety leak checks. Open Mon–Sat (7am–9pm) & Sunday (10am–9pm).</p>
-    <p style="margin-top:18px"><a href="https://wa.me." target="_blank" class="btn">📲 Chat on WhatsApp</a></p>
-    <figure class="hero-img-wrap" style="margin-left:0;margin-right:0">
-      <img src="plant-day.jpg" alt="BX Energies 1.5MT LPG Refilling Plant at Amagba Junction" onerror="this.src='https://placehold.co'">
-      <figcaption class="img-badge">🏭 1.5MT Plant • Amagba Junction</figcaption>
-    </figure>
-  </section>
+<div class="wrap hero">
+  <div>
+    <p style="color:#0056D2;font-weight:700;margin:0">📍 Amagba Junction, Amagba GRA, BIU & Benin City</p>
+    <h1 style="font-size:2rem;margin:8px 0;line-height:1.2">Precision-Weighed Cooking Gas Delivered Fast.</h1>
+    <p style="color:#64748b">100% digitally metered LPG refills, brand-new cylinders & accessories, and free home safety leak checks. Open Mon–Sat (7am–9pm) & Sun (10am–9pm).</p>
+    <a href="https://wa.me." target="_blank" class="btn">📲 Chat on WhatsApp</a>
+    <div class="hero-img">
+      <img src="plant-day.jpg" alt="BX Energies Plant" onerror="this.src='https://placehold.co'">
+      <span class="badge">🏭 1.5MT Plant • Amagba Junction</span>
+    </div>
+  </div>
 
-  <article class="card">
-    <h3 style="margin-top:0;margin-bottom:12px;color:#0B132B">Instant Refill & Cylinder Calculator (₦1,350/kg)</h3>
-    
-    <p class="presets">
+  <div class="card">
+    <h3 style="margin:0 0 10px;color:#0B132B">Instant Refill & Cylinder Calculator (₦1,350/kg)</h3>
+    <div class="g4">
       <button type="button" class="p-btn" onclick="setKg(6,this)">6 kg</button>
       <button type="button" class="p-btn active" onclick="setKg(12.5,this)">12.5 kg</button>
       <button type="button" class="p-btn" onclick="setKg(25,this)">25 kg</button>
       <button type="button" class="p-btn" onclick="setKg(50,this)">50 kg</button>
-    </p>
+    </div>
 
-    <section class="two-col">
-      <p style="margin:0">
-        <label class="field-label" for="kg">Weight (KG):</label>
-        <input type="number" id="kg" value="12.5" step="0.1" oninput="fromKg()">
-      </p>
-      <p style="margin:0">
-        <label class="field-label" for="amt">Gas Budget (₦):</label>
-        <input type="number" id="amt" value="16875" step="500" oninput="fromAmt()">
-      </p>
-    </section>
+    <div class="g2">
+      <div><label class="lbl">Weight (KG):</label><input type="number" id="kg" value="12.5" step="0.1" oninput="fromKg()"></div>
+      <div><label class="lbl">Gas Budget (₦):</label><input type="number" id="amt" value="16875" step="500" oninput="fromAmt()"></div>
+    </div>
 
-    <section class="cyl-box">
-      <label class="cyl-toggle"><input type="checkbox" id="buyCyl" onchange="toggleCylSelect()"> Need a Brand-New Cylinder?</label>
-      <p id="cylSelectWrap" style="display:none;margin:10px 0 0">
-        <select id="cylSize" onchange="calc()" style="margin-bottom:0">
+    <div class="cyl-box">
+      <label style="font-weight:700;color:#15803d;font-size:.88rem;cursor:pointer;display:flex;align-items:center;gap:6px">
+        <input type="checkbox" id="buyCyl" onchange="toggleCyl()"> Need a Brand-New Cylinder?
+      </label>
+      <div id="cylWrap" style="display:none;margin-top:8px">
+        <select id="cylSize" onchange="calc()">
           <option value="18000" data-label="New 6kg Cylinder">6kg Empty Cylinder (+₦18,000)</option>
           <option value="28000" data-label="New 12.5kg Cylinder" selected>12.5kg Empty Cylinder (+₦28,000)</option>
           <option value="85000" data-label="New 50kg Cylinder">50kg Commercial Cylinder (+₦85,000)</option>
         </select>
-      </p>
-    </section>
+      </div>
+    </div>
 
-    <label class="field-label">Service Option:</label>
-    <section class="two-col" style="margin-bottom:14px">
-      <button type="button" class="s-btn active" id="btnDel" onclick="setService(true)">🚚 Pickup + Delivery (₦2,000)</button>
-      <button type="button" class="s-btn" id="btnWalk" onclick="setService(false)">⛽ Plant Walk-In (₦0)</button>
-    </section>
+    <label class="lbl">Service Option:</label>
+    <div class="g2">
+      <button type="button" class="s-btn active" id="btnDel" onclick="setSrv(true)">🚚 Pickup + Delivery (₦2,000)</button>
+      <button type="button" class="s-btn" id="btnWalk" onclick="setSrv(false)">⛽ Plant Walk-In (₦0)</button>
+    </div>
 
-    <section id="addrWrap">
-      <label class="field-label" for="addr">Your Estate / Street:</label>
-      <p class="chips-wrap">
+    <div id="addrWrap">
+      <label class="lbl">Your Estate / Street:</label>
+      <div class="chips">
         <button type="button" class="chip" onclick="pickArea('Amagba Junction')">Amagba Junction</button>
         <button type="button" class="chip" onclick="pickArea('Amagba GRA')">Amagba GRA</button>
         <button type="button" class="chip" onclick="pickArea('BIU Axis')">BIU Axis</button>
         <button type="button" class="chip" onclick="pickArea('Limit Road')">Limit Road</button>
         <button type="button" class="chip" onclick="pickArea('Aruogba')">Aruogba</button>
+        <button type="button" class="chip" onclick="pickArea('Sapele Road')">Sapele Road</button>
+      </div>
+      <input type="text" id="addr" placeholder="Tap an area above or type street/house no...">
+    </div>
+
+    <label class="lbl">Optional Accessories:</label>
+    <div class="g2">
+      <label class="addon"><input type="checkbox" id="oring" onchange="calc()"> Valve O-Ring (+₦200)</label>
+      <label class="addon"><input type="checkbox" id="burner" onchange="calc()"> Camp Burner (+₦3,000)</label>
+      <label class="addon"><input type="checkbox" id="hose" onchange="calc()"> Heavy-Duty Hose (+₦3,500)</label>
+      <label class="addon"><input type="checkbox" id="regulator" onchange="calc()"> Gas Regulator (+₦4,500)</label>
+    </div>
+
+    <div class="total-box">
+      <div class="t-row"><span>Gas Cost:</span><span id="gasCost">₦16,875</span></div>
+      <div class="t-row" id="cylRow" style="display:none"><span id="cylLbl">New Cylinder:</span><span id="cylCost">₦0</span></div>
+      <div class="t-row"><span id="delLbl">Pickup + Delivery:</span><span id="delCost">₦2,000</span></div>
+      <div class="t-row" id="addRow" style="display:none"><span>Accessories:</span><span id="addCost">₦0</span></div>
+      <div class="t-main"><span>Total Payable:</span><span id="total">₦18,875</span></div>
+    </div>
+
+    <button type="button" class="btn" style="width:100%" onclick="order()">📲 Send Order via WhatsApp</button>
+  </div>
+</div>
+
+<div class="wrap grid3">
+  <div class="box"><h3 style="margin-top:0;color:#0047AB">⚖️ Zero Under-Filling</h3><p style="margin:0">Weighed empty and re-weighed after filling on calibrated digital scales so you get exact value.</p></div>
