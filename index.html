@@ -50,7 +50,7 @@ footer a{color:#00A8E8;text-decoration:none}
 <header>
   <div class="logo">⚡ BX energies</div>
   <span id="live-status" class="status">🟢 Open Now</span>
-  <a href="https://wa.me." class="btn" style="padding:8px 16px;font-size:.85rem">Order Gas</a>
+  <a href="https://wa.me" target="_blank" class="btn" style="padding:8px 16px;font-size:.85rem">Order Gas</a>
 </header>
 
 <div class="wrap hero">
@@ -58,7 +58,7 @@ footer a{color:#00A8E8;text-decoration:none}
     <p style="color:#0056D2;font-weight:700;margin:0">📍 Amagba Junction, Amagba GRA, BIU & Benin City</p>
     <h1 style="font-size:2rem;margin:8px 0;line-height:1.2">Precision-Weighed Cooking Gas Delivered Fast.</h1>
     <p style="color:#64748b">100% digitally metered LPG refills, brand-new cylinders & accessories, and free home safety leak checks. Open Mon–Sat (7am–9pm) & Sun (10am–9pm).</p>
-    <a href="https://wa.me." class="btn">📲 Chat on WhatsApp</a>
+    <a href="https://wa.me" target="_blank" class="btn">📲 Chat on WhatsApp</a>
     <div class="hero-img">
       <img src="plant-day.jpg" alt="BX Energies Plant" onerror="this.src='https://placehold.co'">
       <span class="badge">🏭 1.5MT Plant • Amagba Junction</span>
@@ -110,6 +110,7 @@ footer a{color:#00A8E8;text-decoration:none}
       </div>
       <input type="text" id="addr" placeholder="Tap an area above or type street/house no...">
     </div>
+
     <label class="lbl">Optional Accessories:</label>
     <div class="g2">
       <label class="addon"><input type="checkbox" id="oring" onchange="calc()"> Valve O-Ring (+₦200)</label>
@@ -126,100 +127,10 @@ footer a{color:#00A8E8;text-decoration:none}
       <div class="t-main"><span>Total Payable:</span><span id="total">₦18,875</span></div>
     </div>
 
-    <a id="waOrderBtn" href="https://wa.me." onclick="return checkOrder()" class="btn" style="width:100%">📲 Send Order via WhatsApp</a>
+    <a id="waOrderBtn" href="https://wa.me" target="_blank" onclick="return checkOrder()" class="btn" style="width:100%">📲 Send Order via WhatsApp</a>
   </div>
 </div>
 
 <div class="wrap grid3">
   <div class="box"><h3 style="margin-top:0;color:#0047AB">⚖️ Zero Under-Filling</h3><p style="margin:0">Weighed empty and re-weighed after filling on calibrated digital scales so you get exact value.</p></div>
   <div class="box"><h3 style="margin-top:0;color:#0047AB">⚡ Fast Dispatch</h3><p style="margin:0">Rapid pickup and doorstep delivery across Amagba axis, Amagba GRA, BIU, and Benin City.</p></div>
-  <div class="box"><h3 style="margin-top:0;color:#0047AB">🛡️ Free Safety Check</h3><p style="margin:0">Complimentary regulator and hose leak inspection with every home delivery.</p></div>
-</div>
-
-<div class="wrap">
-  <div class="bulk">
-    <div>
-      <span style="color:#4ADE80;font-weight:700;font-size:.82rem;text-transform:uppercase">🏢 Commercial & Bulk LPG Supply</span>
-      <h2 style="margin:6px 0 8px;font-size:1.5rem">Reliable Gas Supply for Hotels, Bakeries & Restaurants</h2>
-      <p style="color:#cbd5e1;margin:0;font-size:.92rem">Priority scheduled refills, 50kg cylinder swaps, and dedicated account support across Benin City.</p>
-      <div style="margin-top:10px">
-        <span class="tag">🍽️ Restaurants</span><span class="tag">🍞 Bakeries</span><span class="tag">🏨 Hotels</span><span class="tag">🏘️ Estates</span>
-      </div>
-    </div>
-    <a href="https://wa.me." class="btn">📋 Request Bulk Quote</a>
-  </div>
-</div>
-
-<div class="wrap">
-  <h2 style="text-align:center;color:#0047AB;margin:0 0 16px">Inside BX Energies Plant & Shop</h2>
-  <div class="grid3">
-    <div class="box gal">
-      <img src="plant-store.jpg" alt="BX Energies Retail Shop" onerror="this.src='https://placehold.co'">
-      <h4 style="margin:12px 0 4px;color:#0047AB">🛒 Mini Office & Accessories Shop</h4>
-      <p style="margin:0;font-size:.88rem;color:#64748b">Walk in for brand-new cylinders, cookers, regulators, hoses, and camp burners.</p>
-    </div>
-    <div class="box gal">
-      <img src="plant-night.jpg" alt="BX Energies Night Lighting" onerror="this.src='https://placehold.co'">
-      <h4 style="margin:12px 0 4px;color:#0047AB">🌙 Open Late Until 9:00 PM Daily</h4>
-      <p style="margin:0;font-size:.88rem;color:#64748b">Well-lit, secure refilling forecourt with bright digital price signage at Amagba Junction.</p>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <h3 style="color:#4ADE80;margin-top:0">BX Energies Nigeria</h3>
-  <p>📍 Amagba Junction, Benin City • 🕒 Mon–Sat: 7am–9pm | Sun: 10am–9pm</p>
-  <p>📞 <a href="https://wa.me">+234 903 809 8658</a> • ✉️ <a href="mailto:bxenergies@gmail.com">bxenergies@gmail.com</a></p>
-</footer>
-
-<script>
-const RATE=1350,DEL=2000,WA="2349038098658";let isDel=true;
-(function(){const s=document.getElementById("live-status"),d=new Date(new Date().toLocaleString("en-US",{timeZone:"Africa/Lagos"})),h=d.getHours(),o=d.getDay()===0?10:7;if(h>=o&&h<21){s.innerText="🟢 Open Now • Closes 9PM"}else{s.classList.add("closed");s.innerText="🔴 Closed • Opens "+(d.getDay()===6&&h>=21?"10AM Sun":"7AM")}})();
-function pickArea(a){const i=document.getElementById("addr");i.value=a+" - ";calc();i.focus()}
-function toggleCyl(){document.getElementById("cylWrap").style.display=document.getElementById("buyCyl").checked?"block":"none";calc()}
-function setKg(v,b){document.querySelectorAll(".p-btn").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.getElementById("kg").value=v;fromKg()}
-function setSrv(d){isDel=d;document.getElementById("btnDel").classList.toggle("active",d);document.getElementById("btnWalk").classList.toggle("active",!d);document.getElementById("addrWrap").style.display=d?"block":"none";document.getElementById("delLbl").innerText=d?"Pickup + Delivery:":"Plant Walk-In:";document.getElementById("delCost").innerText=d?"₦2,000":"₦0";calc()}
-function fromKg(){const k=parseFloat(document.getElementById("kg").value)||0;document.getElementById("amt").value=Math.round(k*RATE);calc()}
-function fromAmt(){document.querySelectorAll(".p-btn").forEach(x=>x.classList.remove("active"));const a=parseFloat(document.getElementById("amt").value)||0;document.getElementById("kg").value=(a/RATE).toFixed(2);calc()}
-function calc(){
-  const g=parseFloat(document.getElementById("amt").value)||0;
-  let c=0,cylTxt="";
-  if(document.getElementById("buyCyl").checked){
-    const s=document.getElementById("cylSize");
-    c=parseFloat(s.value)||0;
-    cylTxt=" | Cylinder: "+s.options[s.selectedIndex].dataset.label+" (NGN "+c.toLocaleString()+")";
-    document.getElementById("cylRow").style.display="flex";
-    document.getElementById("cylLbl").innerText=s.options[s.selectedIndex].dataset.label+":";
-    document.getElementById("cylCost").innerText="₦"+c.toLocaleString();
-  }else{document.getElementById("cylRow").style.display="none"}
-  let a=0,x=[];
-  if(document.getElementById("oring").checked){a+=200;x.push("O-Ring")}
-  if(document.getElementById("burner").checked){a+=3000;x.push("Camp Burner")}
-  if(document.getElementById("hose").checked){a+=3500;x.push("Hose")}
-  if(document.getElementById("regulator").checked){a+=4500;x.push("Regulator")}
-  document.getElementById("addRow").style.display=a>0?"flex":"none";
-  document.getElementById("addCost").innerText="₦"+a.toLocaleString();
-  const tot=Math.round(g+c+(isDel?DEL:0)+a);
-  document.getElementById("gasCost").innerText="₦"+Math.round(g).toLocaleString();
-  document.getElementById("total").innerText="₦"+tot.toLocaleString();
-  const k=document.getElementById("kg").value,ad=document.getElementById("addr").value.trim();
-  let m="Hello BX Energies! Order: "+k+"kg Gas (NGN "+Math.round(g).toLocaleString()+")"+cylTxt;
-  m+=isDel?" | Pickup + Delivery to: "+(ad||"Amagba"):" | Plant Walk-In";
-  if(x.length)m+=" | Add-ons: "+x.join(", ");
-  m+=" | Total: NGN "+tot.toLocaleString();
-  document.getElementById("waOrderBtn").href="https://wa.me"+WA+"?text="+encodeURIComponent(m);
-}
-function checkOrder(){
-  calc();
-  if(isDel&&!document.getElementById("addr").value.trim()){
-    alert("Please tap an area chip or enter your address.");
-    document.getElementById("addr").focus();
-    return false;
-  }
-  return true;
-}
-document.getElementById("addr").addEventListener("input",calc);
-calc();
-</script>
-</body>
-</html>
