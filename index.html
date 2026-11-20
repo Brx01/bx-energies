@@ -41,6 +41,9 @@ header { background: #fff; padding: 14px 20px; box-shadow: 0 2px 10px rgba(0,0,0
 label.field-label { display: block; font-size: 0.88rem; font-weight: 700; color: #334155; margin-bottom: 4px; }
 input[type="number"], input[type="text"], select { width: 100%; padding: 10px; margin: 0 0 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; background: #fff; }
 
+/* Clean Fieldset Reset */
+fieldset.clean-group { border: none; padding: 0; margin: 0 0 12px; }
+
 /* New Cylinder Box */
 .cyl-box { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 11px 12px; border-radius: 10px; margin-bottom: 14px; }
 .cyl-toggle { display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 700; color: #15803d; font-size: 0.9rem; margin: 0; }
@@ -112,7 +115,7 @@ footer a { color: #00A8E8; text-decoration: none; }
   </div>
 
   <!-- Calculator Card -->
-  <div class="card">
+  <article class="card">
     <h3 style="margin-top:0; margin-bottom:12px; color:#0B132B;">Instant Refill & Cylinder Calculator (₦1,350/kg)</h3>
     
     <div class="presets">
@@ -143,7 +146,3 @@ footer a { color: #00A8E8; text-decoration: none; }
           <option value="18000" data-label="New 6kg Cylinder">6kg Empty Cylinder (+₦18,000)</option>
           <option value="28000" data-label="New 12.5kg Cylinder" selected>12.5kg Empty Cylinder (+₦28,000)</option>
           <option value="85000" data-label="New 50kg Cylinder">50kg Commercial Cylinder (+₦85,000)</option>
-        </select>
-      </div>
-    </div>
-
