@@ -4,29 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BX Energies | Cooking Gas Delivery in Amagba & Benin City</title>
+<meta name="description" content="100% digitally metered LPG cooking gas refills, brand-new cylinders, and fast doorstep delivery across Amagba Junction, Amagba GRA, BIU & Benin City.">
+
+<!-- WhatsApp, Facebook & Social Link Preview Tags (Open Graph) -->
+<meta property="og:title" content="BX Energies | Precision Cooking Gas & Delivery (₦1,350/kg)">
+<meta property="og:description" content="Order exact-weight LPG refills, new cylinders & accessories with fast Pickup + Delivery (₦2,000 flat fee) in Amagba & Benin City.">
+<meta property="og:type" content="website">
+<!-- Replace YOUR_USERNAME and YOUR_REPO below with your actual GitHub Pages URL -->
+<meta property="og:image" content="https://YOUR_USERNAME.github.io/YOUR_REPO/plant-day.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
 <style>
 body { font-family: system-ui, sans-serif; margin: 0; background: #f8fafc; color: #1e293b; line-height: 1.5; }
-header { background: #fff; padding: 15px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
-.logo { font-size: 1.5rem; font-weight: 900; background: linear-gradient(135deg, #0047AB, #00A8E8, #4ADE80); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+header { background: #fff; padding: 14px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; gap: 10px; }
+.logo { font-size: 1.45rem; font-weight: 900; background: linear-gradient(135deg, #0047AB, #00A8E8, #4ADE80); -webkit-background-clip: text; -webkit-text-fill-color: transparent; white-space: nowrap; }
+.status-pill { font-size: 0.78rem; font-weight: 700; padding: 5px 11px; border-radius: 50px; display: inline-flex; align-items: center; gap: 6px; }
+.status-open { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+.status-closed { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.dot-open { background: #16a34a; }
+.dot-closed { background: #dc2626; }
 .btn { background: linear-gradient(135deg, #0047AB, #00A8E8, #4ADE80); color: #fff; padding: 12px 22px; border-radius: 50px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; display: inline-block; text-align: center; transition: opacity 0.2s; }
 .btn:hover { opacity: 0.92; }
-.hero { padding: 40px 20px; max-width: 1050px; margin: auto; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 30px; align-items: start; }
+.hero { padding: 35px 20px; max-width: 1080px; margin: auto; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 30px; align-items: start; }
 .hero-img-wrap { margin-top: 22px; border-radius: 18px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 71, 171, 0.15); border: 3px solid #fff; background: #e2e8f0; position: relative; }
 .hero-img-wrap img { width: 100%; height: 260px; object-fit: cover; display: block; }
 .img-badge { position: absolute; bottom: 12px; left: 12px; background: rgba(11, 19, 43, 0.85); color: #4ADE80; font-size: 0.8rem; font-weight: bold; padding: 6px 12px; border-radius: 50px; backdrop-filter: blur(4px); }
-.card { background: #fff; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid #00A8E8; }
-.presets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 12px 0; }
-.p-btn, .s-btn { padding: 8px; border: 1px solid #cbd5e1; background: #fff; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 0.88rem; }
+.card { background: #fff; padding: 24px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid #00A8E8; }
+.presets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0 14px; }
+.p-btn, .s-btn { padding: 8px; border: 1px solid #cbd5e1; background: #fff; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 0.86rem; }
 .p-btn.active, .s-btn.active { background: #e0f2fe; border-color: #00A8E8; color: #0056D2; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
-input[type="number"], input[type="text"] { width: 100%; padding: 10px; margin: 6px 0 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
+input[type="number"], input[type="text"], select { width: 100%; padding: 10px; margin: 6px 0 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; box-sizing: border-box; background: #fff; }
+.chips-wrap { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
+.chip { background: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 0.78rem; font-weight: 600; padding: 4px 10px; border-radius: 50px; cursor: pointer; }
+.chip:hover { background: #e0f2fe; border-color: #00A8E8; color: #0056D2; }
+.cyl-box { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 10px 12px; border-radius: 10px; margin-bottom: 12px; }
 .addons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 6px; }
-.addon-label { display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 0.86rem; background: #f8fafc; padding: 7px 9px; border-radius: 8px; border: 1px solid #e2e8f0; }
+.addon-label { display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 0.85rem; background: #f8fafc; padding: 7px 9px; border-radius: 8px; border: 1px solid #e2e8f0; }
 .total-box { background: #0B132B; color: #fff; padding: 15px; border-radius: 12px; margin: 15px 0; }
-.total-row { display: flex; justify-content: space-between; font-size: 0.9rem; color: #cbd5e1; margin-bottom: 6px; }
+.total-row { display: flex; justify-content: space-between; font-size: 0.88rem; color: #cbd5e1; margin-bottom: 5px; }
 .total-main { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1e293b; padding-top: 8px; margin-top: 6px; }
 .total-main span:last-child { color: #4ADE80; font-size: 1.4rem; font-weight: 800; }
-.section-wrap { max-width: 1050px; margin: auto; padding: 25px 20px; }
+.section-wrap { max-width: 1080px; margin: auto; padding: 25px 20px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
 .feature { background: #fff; padding: 20px; border-radius: 15px; border: 1px solid #e2e8f0; }
 .gallery-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
@@ -34,11 +54,15 @@ input[type="number"], input[type="text"] { width: 100%; padding: 10px; margin: 6
 .gallery-caption { padding: 15px; }
 .gallery-caption h4 { margin: 0 0 5px; color: #0047AB; }
 .gallery-caption p { margin: 0; font-size: 0.9rem; color: #64748b; }
+.bulk-banner { background: linear-gradient(135deg, #0B132B 0%, #003d82 100%); color: #fff; border-radius: 20px; padding: 30px; display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 20px; align-items: center; box-shadow: 0 10px 25px rgba(11, 19, 43, 0.15); }
+.bulk-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.bulk-tag { background: rgba(255,255,255,0.12); color: #4ADE80; font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 50px; }
 footer { background: #060B19; color: #94a3b8; padding: 40px 20px; text-align: center; margin-top: 40px; }
 footer a { color: #00A8E8; text-decoration: none; }
 @media (max-width: 768px) { 
-  .hero { grid-template-columns: 1fr; } 
+  .hero, .bulk-banner { grid-template-columns: 1fr; } 
   .addons-grid { grid-template-columns: 1fr; }
+  header { flex-wrap: wrap; }
 }
 </style>
 </head>
@@ -46,26 +70,30 @@ footer a { color: #00A8E8; text-decoration: none; }
 
 <header>
   <div class="logo">⚡ BX energies</div>
-  <a href="https://wa.me." target="_blank" class="btn">Order Gas</a>
+  <div id="live-status" class="status-pill status-open">
+    <span class="dot dot-open"></span> Checking hours...
+  </div>
+  <a href="https://wa.me." target="_blank" class="btn" style="padding: 9px 18px; font-size: 0.9rem;">Order Gas</a>
 </header>
 
 <section class="hero">
   <div>
     <p style="color:#0056D2; font-weight:bold; margin-top:0;">📍 Amagba Junction, Amagba GRA, BIU & Benin City</p>
-    <h1 style="font-size:2.2rem; margin:10px 0;">Precision-Weighed Cooking Gas Delivered Fast.</h1>
-    <p style="color:#64748b;">100% digitally metered LPG refills, quality cylinders & accessories, and free home safety leak checks. Open Mon–Sat (7am–9pm) & Sunday (10am–9pm).</p>
+    <h1 style="font-size:2.15rem; margin:10px 0;">Precision-Weighed Cooking Gas Delivered Fast.</h1>
+    <p style="color:#64748b;">100% digitally metered LPG refills, brand-new cylinders & accessories, and free home safety leak checks. Open Mon–Sat (7am–9pm) & Sunday (10am–9pm).</p>
     <div style="margin-top: 18px;">
       <a href="https://wa.me." target="_blank" class="btn">📲 Chat on WhatsApp</a>
     </div>
 
     <div class="hero-img-wrap">
       <img src="plant-day.jpg" alt="BX Energies 1.5MT LPG Refilling Plant at Amagba Junction" onerror="this.src='https://placehold.co'">
-      <span class="img-badge">🏭 Our 1.5MT Plant • Amagba Junction</span>
+      <span class="img-badge">🏭 1.5MT Plant • Amagba Junction</span>
     </div>
   </div>
 
+  <!-- Calculator Card -->
   <div class="card">
-    <h3 style="margin-top:0;">Instant Refill Calculator (₦1,350/kg)</h3>
+    <h3 style="margin-top:0;">Instant Refill & Cylinder Calculator (₦1,350/kg)</h3>
     <div class="presets">
       <button type="button" class="p-btn" onclick="setKg(6, this)">6 kg</button>
       <button type="button" class="p-btn active" onclick="setKg(12.5, this)">12.5 kg</button>
@@ -84,87 +112,27 @@ footer a { color: #00A8E8; text-decoration: none; }
       </div>
     </div>
 
+    <!-- New Cylinder Purchase Option -->
+    <div class="cyl-box">
+      <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-weight:bold; color:#15803d; font-size:0.9rem;">
+        <input type="checkbox" id="buyCyl" onchange="toggleCylSelect()"> Need a Brand-New Cylinder?
+      </label>
+      <div id="cylSelectWrap" style="display:none; margin-top:8px;">
+        <select id="cylSize" onchange="calc()" style="margin:0;">
+          <option value="18000" data-label="New 6kg Cylinder">6kg Empty Cylinder (+₦18,000)</option>
+          <option value="28000" data-label="New 12.5kg Cylinder" selected>12.5kg Empty Cylinder (+₦28,000)</option>
+          <option value="85000" data-label="New 50kg Cylinder">50kg Commercial Cylinder (+₦85,000)</option>
+        </select>
+      </div>
+    </div>
+
     <label><b>Service Option:</b></label>
     <div class="two-col" style="margin-top:6px;">
       <button type="button" class="s-btn active" id="btnDel" onclick="setService(true)">🚚 Pickup + Delivery (₦2,000)</button>
       <button type="button" class="s-btn" id="btnWalk" onclick="setService(false)">⛽ Plant Walk-In (₦0)</button>
     </div>
 
+    <!-- Address with Quick-Tap Estate Chips -->
     <div id="addrWrap">
-      <label><b>Your Estate / Street in Amagba:</b></label>
-      <input type="text" id="addr" placeholder="e.g., Amagba GRA, BIU Axis...">
-    </div>
-
-    <label><b>Optional Accessories:</b></label>
-    <div class="addons-grid">
-      <label class="addon-label"><input type="checkbox" id="oring" onchange="calc()"> Valve O-Ring (+₦200)</label>
-      <label class="addon-label"><input type="checkbox" id="burner" onchange="calc()"> Camp Burner (+₦3,000)</label>
-      <label class="addon-label"><input type="checkbox" id="hose" onchange="calc()"> Heavy-Duty Hose (+₦3,500)</label>
-      <label class="addon-label"><input type="checkbox" id="regulator" onchange="calc()"> Gas Regulator (+₦4,500)</label>
-    </div>
-
-    <div class="total-box">
-      <div class="total-row">
-        <span>Gas Cost:</span>
-        <span id="gasCost">₦16,875</span>
-      </div>
-      <div class="total-row">
-        <span id="delLabel">Pickup + Delivery:</span>
-        <span id="delCost">₦2,000</span>
-      </div>
-      <div class="total-row" id="addonRow" style="display:none;">
-        <span>Accessories:</span>
-        <span id="addonCost">₦0</span>
-      </div>
-      <div class="total-main">
-        <span>Total Payable:</span>
-        <span id="total">₦18,875</span>
-      </div>
-    </div>
-
-    <button type="button" class="btn" style="width:100%;" onclick="order()">📲 Send Order via WhatsApp</button>
-  </div>
-</section>
-
-<section class="section-wrap">
-  <div class="grid">
-    <div class="feature">
-      <h3>⚖️ Zero Under-Filling</h3>
-      <p>Weighed empty and re-weighed after filling on calibrated digital scales so you get exact value.</p>
-    </div>
-    <div class="feature">
-      <h3>⚡ Fast Dispatch</h3>
-      <p>Rapid pickup and doorstep delivery across Amagba axis, Amagba GRA, BIU, and Benin City.</p>
-    </div>
-    <div class="feature">
-      <h3>🛡️ Free Safety Check</h3>
-      <p>Complimentary regulator and hose leak inspection with every home delivery.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section-wrap">
-  <h2 style="text-align:center; color:#0047AB; margin-bottom: 20px;">Inside BX Energies Plant & Retail Shop</h2>
-  <div class="grid">
-    <div class="gallery-card">
-      <img src="plant-store.jpg" alt="BX Energies Mini Office and Gas Accessories Storefront" onerror="this.src='https://placehold.co'">
-      <div class="gallery-caption">
-        <h4>🛒 Mini Office & Accessories Shop</h4>
-        <p>Walk in for brand-new cylinders (3kg–50kg), tabletop gas cookers, regulators, hoses, and camp burners.</p>
-      </div>
-    </div>
-    <div class="gallery-card">
-      <img src="plant-night.jpg" alt="BX Energies Plant Night Lighting and Security" onerror="this.src='https://placehold.co'">
-      <div class="gallery-caption">
-        <h4>🌙 Open Late Until 9:00 PM Daily</h4>
-        <p>Well-lit, secure refilling forecourt with bright digital price signage at Amagba Junction.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <h3 style="color:#4ADE80;">BX Energies Nigeria</h3>
-  <p>📍 Plant Location: Amagba Junction, Benin City</p>
-  <p>🕒 Mon – Sat: 7:00 AM – 9:00 PM | Sunday: 10:00 AM – 9:00 PM</p>
-  <p>📞 WhatsApp: <a href="https://wa.me" target="_blank">+234 903 809 8658</a> | ✉️ <a href="mailto:bxenergies@gmail.com">bxenergies@gmail.com</a></p>
+      <label><b>Your Estate / Street:</b></label>
+      <div class="chips-wrap">
