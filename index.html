@@ -7,7 +7,6 @@
 <meta name="description" content="100% digitally metered LPG cooking gas refills, brand-new cylinders, and fast doorstep delivery across Amagba Junction, Amagba GRA, BIU & Benin City.">
 <meta property="og:title" content="BX Energies | Precision Cooking Gas & Delivery (₦1,350/kg)">
 <meta property="og:description" content="Order exact-weight LPG refills, new cylinders & accessories with fast Pickup + Delivery (₦2,000 flat fee) in Amagba & Benin City.">
-<meta property="og:image" content="https://YOUR_USERNAME.github.io/YOUR_REPO/plant-day.jpg">
 <style>
 *{box-sizing:border-box}
 body{font-family:system-ui,-apple-system,sans-serif;margin:0;background:#f8fafc;color:#1e293b;line-height:1.5}
@@ -51,7 +50,7 @@ footer a{color:#00A8E8;text-decoration:none}
 <header>
   <div class="logo">⚡ BX energies</div>
   <span id="live-status" class="status">🟢 Open Now</span>
-  <a href="https://whatsapp.com." class="btn" style="padding:8px 16px;font-size:.85rem">Order Gas</a>
+  <button type="button" onclick="openWA('Hello BX Energies! I want to order cooking gas.')" class="btn" style="padding:8px 16px;font-size:.85rem">Order Gas</button>
 </header>
 
 <div class="wrap hero">
@@ -59,7 +58,7 @@ footer a{color:#00A8E8;text-decoration:none}
     <p style="color:#0056D2;font-weight:700;margin:0">📍 Amagba Junction, Amagba GRA, BIU & Benin City</p>
     <h1 style="font-size:2rem;margin:8px 0;line-height:1.2">Precision-Weighed Cooking Gas Delivered Fast.</h1>
     <p style="color:#64748b">100% digitally metered LPG refills, brand-new cylinders & accessories, and free home safety leak checks. Open Mon–Sat (7am–9pm) & Sun (10am–9pm).</p>
-    <a href="https://whatsapp.com." class="btn">📲 Chat on WhatsApp</a>
+    <button type="button" onclick="openWA('Hello BX Energies! I want to chat about a gas order.')" class="btn">📲 Chat on WhatsApp</button>
     <div class="hero-img">
       <img src="plant-day.jpg" alt="BX Energies Plant" onerror="this.src='https://placehold.co'">
       <span class="badge">🏭 1.5MT Plant • Amagba Junction</span>
@@ -147,7 +146,7 @@ footer a{color:#00A8E8;text-decoration:none}
         <span class="tag">🍽️ Restaurants</span><span class="tag">🍞 Bakeries</span><span class="tag">🏨 Hotels</span><span class="tag">🏘️ Estates</span>
       </div>
     </div>
-    <a href="https://whatsapp.com." class="btn">📋 Request Bulk Quote</a>
+    <button type="button" onclick="openWA('Hello BX Energies! I would like to request a Commercial / Bulk LPG supply quote.')" class="btn">📋 Request Bulk Quote</button>
   </div>
 </div>
 
@@ -170,12 +169,12 @@ footer a{color:#00A8E8;text-decoration:none}
 <footer>
   <h3 style="color:#4ADE80;margin-top:0">BX Energies Nigeria</h3>
   <p>📍 Amagba Junction, Benin City • 🕒 Mon–Sat: 7am–9pm | Sun: 10am–9pm</p>
-  <p>📞 <a href="https://whatsapp.com">+234 903 809 8658</a> • ✉️ <a href="mailto:bxenergies@gmail.com">bxenergies@gmail.com</a></p>
-  <p>📸 <a href="https://instagram.com">@bxenergies</a> • 🐦 <a href="https://x.com">@BXenergies</a></p>
+  <p>📞 <a href="#" onclick="openWA('Hello BX Energies!');return false;">+234 903 809 8658</a> • ✉️ <a href="mailto:bxenergies@gmail.com">bxenergies@gmail.com</a></p>
 </footer>
 
 <script>
 const RATE=1350,DEL=2000,WA="2349038098658";let isDel=true;
+function openWA(txt){const url="https:"+"//wa.me/"+WA+"?text="+encodeURIComponent(txt);window.location.assign(url)}
 (function(){const s=document.getElementById("live-status"),d=new Date(new Date().toLocaleString("en-US",{timeZone:"Africa/Lagos"})),h=d.getHours(),o=d.getDay()===0?10:7;if(h>=o&&h<21){s.innerText="🟢 Open Now • Closes 9PM"}else{s.classList.add("closed");s.innerText="🔴 Closed • Opens "+(d.getDay()===6&&h>=21?"10AM Sun":"7AM")}})();
 function pickArea(a){const i=document.getElementById("addr");i.value=a+" - ";i.focus()}
 function toggleCyl(){document.getElementById("cylWrap").style.display=document.getElementById("buyCyl").checked?"block":"none";calc()}
@@ -184,7 +183,7 @@ function setSrv(d){isDel=d;document.getElementById("btnDel").classList.toggle("a
 function fromKg(){const k=parseFloat(document.getElementById("kg").value)||0;document.getElementById("amt").value=Math.round(k*RATE);calc()}
 function fromAmt(){document.querySelectorAll(".p-btn").forEach(x=>x.classList.remove("active"));const a=parseFloat(document.getElementById("amt").value)||0;document.getElementById("kg").value=(a/RATE).toFixed(2);calc()}
 function calc(){const g=parseFloat(document.getElementById("amt").value)||0;let c=0;if(document.getElementById("buyCyl").checked){const s=document.getElementById("cylSize");c=parseFloat(s.value)||0;document.getElementById("cylRow").style.display="flex";document.getElementById("cylLbl").innerText=s.options[s.selectedIndex].dataset.label+":";document.getElementById("cylCost").innerText="₦"+c.toLocaleString()}else{document.getElementById("cylRow").style.display="none"}let a=0;if(document.getElementById("oring").checked)a+=200;if(document.getElementById("burner").checked)a+=3000;if(document.getElementById("hose").checked)a+=3500;if(document.getElementById("regulator").checked)a+=4500;document.getElementById("addRow").style.display=a>0?"flex":"none";document.getElementById("addCost").innerText="₦"+a.toLocaleString();document.getElementById("gasCost").innerText="₦"+Math.round(g).toLocaleString();document.getElementById("total").innerText="₦"+Math.round(g+c+(isDel?DEL:0)+a).toLocaleString()}
-function order(){const k=document.getElementById("kg").value,g=document.getElementById("gasCost").innerText,t=document.getElementById("total").innerText,ad=document.getElementById("addr").value.trim();if(isDel&&!ad){alert("Please tap an area chip or enter your address.");document.getElementById("addr").focus();return}let m=`Hello BX Energies! Order details:\n• Gas: ${k} kg (${g})\n`;if(document.getElementById("buyCyl").checked){const s=document.getElementById("cylSize");m+=`• Cylinder: ${s.options[s.selectedIndex].dataset.label} (₦${parseFloat(s.value).toLocaleString()})\n`}m+=`• Service: ${isDel?"Pickup + Delivery (₦2,000)":"Plant Walk-In"}\n`;if(isDel)m+=`• Address: ${ad}\n`;let x=[];if(document.getElementById("oring").checked)x.push("O-Ring (₦200)");if(document.getElementById("burner").checked)x.push("Camp Burner (₦3,000)");if(document.getElementById("hose").checked)x.push("Hose (₦3,500)");if(document.getElementById("regulator").checked)x.push("Regulator (₦4,500)");if(x.length)m+=`• Add-ons: ${x.join(", ")}\n`;m+=`\n*Total Payable: ${t}*`;window.location.href=`https://whatsapp.com{WA}&text=${encodeURIComponent(m)}`}
+function order(){const k=document.getElementById("kg").value,g=document.getElementById("gasCost").innerText,t=document.getElementById("total").innerText,ad=document.getElementById("addr").value.trim();if(isDel&&!ad){alert("Please tap an area chip or enter your address.");document.getElementById("addr").focus();return}let m=`Hello BX Energies! Order details:\n• Gas: ${k} kg (${g})\n`;if(document.getElementById("buyCyl").checked){const s=document.getElementById("cylSize");m+=`• Cylinder: ${s.options[s.selectedIndex].dataset.label} (₦${parseFloat(s.value).toLocaleString()})\n`}m+=`• Service: ${isDel?"Pickup + Delivery (₦2,000)":"Plant Walk-In"}\n`;if(isDel)m+=`• Address: ${ad}\n`;let x=[];if(document.getElementById("oring").checked)x.push("O-Ring (₦200)");if(document.getElementById("burner").checked)x.push("Camp Burner (₦3,000)");if(document.getElementById("hose").checked)x.push("Hose (₦3,500)");if(document.getElementById("regulator").checked)x.push("Regulator (₦4,500)");if(x.length)m+=`• Add-ons: ${x.join(", ")}\n`;m+=`\n*Total Payable: ${t}*`;openWA(m)}
 calc();
 </script>
 </body>
