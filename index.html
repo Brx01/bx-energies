@@ -5,144 +5,126 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BX Energies | Cooking Gas Delivery in Amagba & Benin City</title>
 <meta name="description" content="100% digitally metered LPG cooking gas refills, brand-new cylinders, and fast doorstep delivery across Amagba Junction, Amagba GRA, BIU & Benin City.">
-
-<!-- WhatsApp, Facebook & Social Link Preview Tags (Open Graph) -->
 <meta property="og:title" content="BX Energies | Precision Cooking Gas & Delivery (₦1,350/kg)">
 <meta property="og:description" content="Order exact-weight LPG refills, new cylinders & accessories with fast Pickup + Delivery (₦2,000 flat fee) in Amagba & Benin City.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://YOUR_USERNAME.github.io/YOUR_REPO/plant-day.jpg">
 <meta name="twitter:card" content="summary_large_image">
-
 <style>
-* { box-sizing: border-box; }
-body { font-family: system-ui, -apple-system, sans-serif; margin: 0; background: #f8fafc; color: #1e293b; line-height: 1.5; }
-header { background: #fff; padding: 14px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; gap: 10px; }
-.logo { font-size: 1.45rem; font-weight: 900; background: linear-gradient(135deg, #0047AB, #00A8E8, #4ADE80); -webkit-background-clip: text; -webkit-text-fill-color: transparent; white-space: nowrap; }
-.status-pill { font-size: 0.78rem; font-weight: 700; padding: 5px 12px; border-radius: 50px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
-.status-open { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
-.status-closed { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
-.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
-.dot-open { background: #16a34a; }
-.dot-closed { background: #dc2626; }
-.btn { background: linear-gradient(135deg, #0047AB, #00A8E8, #4ADE80); color: #fff; padding: 12px 22px; border-radius: 50px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; display: inline-block; text-align: center; transition: opacity 0.2s; }
-.btn:hover { opacity: 0.92; }
-
-/* Hero & Calculator Layout */
-.hero { padding: 35px 20px; max-width: 1100px; margin: auto; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 32px; align-items: start; }
-.hero-img-wrap { margin-top: 22px; border-radius: 18px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 71, 171, 0.15); border: 3px solid #fff; background: #e2e8f0; position: relative; }
-.hero-img-wrap img { width: 100%; height: 270px; object-fit: cover; display: block; }
-.img-badge { position: absolute; bottom: 12px; left: 12px; background: rgba(11, 19, 43, 0.88); color: #4ADE80; font-size: 0.8rem; font-weight: bold; padding: 6px 14px; border-radius: 50px; }
-
-.card { background: #fff; padding: 24px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid #00A8E8; }
-.presets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0 14px; }
-.p-btn, .s-btn { padding: 9px 6px; border: 1px solid #cbd5e1; background: #fff; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 0.86rem; transition: all 0.15s; }
-.p-btn.active, .s-btn.active { background: #e0f2fe; border-color: #00A8E8; color: #0056D2; }
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
-label.field-label { display: block; font-size: 0.88rem; font-weight: 700; color: #334155; margin-bottom: 4px; }
-input[type="number"], input[type="text"], select { width: 100%; padding: 10px; margin: 0 0 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; background: #fff; }
-
-/* Clean Fieldset Reset */
-fieldset.clean-group { border: none; padding: 0; margin: 0 0 12px; }
-
-/* New Cylinder Box */
-.cyl-box { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 11px 12px; border-radius: 10px; margin-bottom: 14px; }
-.cyl-toggle { display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 700; color: #15803d; font-size: 0.9rem; margin: 0; }
-
-/* Estate Chips */
-.chips-wrap { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 8px; }
-.chip { background: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 0.78rem; font-weight: 600; padding: 5px 10px; border-radius: 50px; cursor: pointer; transition: all 0.15s; }
-.chip:hover { background: #e0f2fe; border-color: #00A8E8; color: #0056D2; }
-
-/* Accessories Grid */
-.addons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px; }
-.addon-label { display: flex; align-items: center; gap: 7px; cursor: pointer; font-size: 0.84rem; background: #f8fafc; padding: 8px 10px; border-radius: 8px; border: 1px solid #e2e8f0; font-weight: 500; }
-
-/* Total Box */
-.total-box { background: #0B132B; color: #fff; padding: 16px; border-radius: 12px; margin: 16px 0; }
-.total-row { display: flex; justify-content: space-between; font-size: 0.88rem; color: #cbd5e1; margin-bottom: 6px; }
-.total-main { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1e293b; padding-top: 10px; margin-top: 6px; }
-.total-main span:last-child { color: #4ADE80; font-size: 1.45rem; font-weight: 800; }
-
-/* Features, Bulk & Gallery Sections */
-.section-wrap { max-width: 1100px; margin: auto; padding: 25px 20px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-.feature { background: #fff; padding: 22px; border-radius: 15px; border: 1px solid #e2e8f0; }
-.feature h3 { margin-top: 0; color: #0047AB; }
-
-.bulk-banner { background: linear-gradient(135deg, #0B132B 0%, #003d82 100%); color: #fff; border-radius: 20px; padding: 30px; display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 24px; align-items: center; box-shadow: 0 10px 25px rgba(11, 19, 43, 0.15); }
-.bulk-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-.bulk-tag { background: rgba(255,255,255,0.12); color: #4ADE80; font-size: 0.8rem; font-weight: 600; padding: 5px 12px; border-radius: 50px; }
-
-.gallery-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
-.gallery-card img { width: 100%; height: 230px; object-fit: cover; display: block; background: #e2e8f0; }
-.gallery-caption { padding: 16px; }
-.gallery-caption h4 { margin: 0 0 6px; color: #0047AB; }
-.gallery-caption p { margin: 0; font-size: 0.9rem; color: #64748b; }
-
-footer { background: #060B19; color: #94a3b8; padding: 40px 20px; text-align: center; margin-top: 40px; }
-footer a { color: #00A8E8; text-decoration: none; }
-
-@media (max-width: 768px) { 
-  .hero, .bulk-banner { grid-template-columns: 1fr; } 
-  .addons-grid { grid-template-columns: 1fr; }
-  header { flex-wrap: wrap; justify-content: center; }
-}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;margin:0;background:#f8fafc;color:#1e293b;line-height:1.5}
+header{background:#fff;padding:14px 20px;box-shadow:0 2px 10px rgba(0,0,0,.06);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;gap:10px}
+.logo{font-size:1.45rem;font-weight:900;background:linear-gradient(135deg,#0047AB,#00A8E8,#4ADE80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;white-space:nowrap}
+.status-pill{font-size:.78rem;font-weight:700;padding:5px 12px;border-radius:50px;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.status-open{background:#dcfce7;color:#15803d;border:1px solid #86efac}
+.status-closed{background:#fee2e2;color:#b91c1c;border:1px solid #fca5a5}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.dot-open{background:#16a34a}
+.dot-closed{background:#dc2626}
+.btn{background:linear-gradient(135deg,#0047AB,#00A8E8,#4ADE80);color:#fff;padding:12px 22px;border-radius:50px;text-decoration:none;font-weight:700;border:none;cursor:pointer;display:inline-block;text-align:center;transition:opacity .2s}
+.btn:hover{opacity:.92}
+.hero{padding:35px 20px;max-width:1100px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:start}
+.hero-img-wrap{margin-top:22px;border-radius:18px;overflow:hidden;box-shadow:0 10px 25px rgba(0,71,171,.15);border:3px solid #fff;background:#e2e8f0;position:relative}
+.hero-img-wrap img{width:100%;height:270px;object-fit:cover;display:block}
+.img-badge{position:absolute;bottom:12px;left:12px;background:rgba(11,19,43,.88);color:#4ADE80;font-size:.8rem;font-weight:700;padding:6px 14px;border-radius:50px}
+.card{background:#fff;padding:24px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.08);border-top:5px solid #00A8E8}
+.presets{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0 14px}
+.p-btn,.s-btn{padding:9px 6px;border:1px solid #cbd5e1;background:#fff;border-radius:8px;font-weight:700;cursor:pointer;font-size:.86rem}
+.p-btn.active,.s-btn.active{background:#e0f2fe;border-color:#00A8E8;color:#0056D2}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+label.field-label{display:block;font-size:.88rem;font-weight:700;color:#334155;margin-bottom:4px}
+input[type=number],input[type=text],select{width:100%;padding:10px;margin:0 0 12px;border:1px solid #cbd5e1;border-radius:8px;font-size:.95rem;background:#fff}
+.cyl-box{background:#f0fdf4;border:1px solid #bbf7d0;padding:11px 12px;border-radius:10px;margin-bottom:14px}
+.cyl-toggle{display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:700;color:#15803d;font-size:.9rem;margin:0}
+.chips-wrap{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 8px}
+.chip{background:#f1f5f9;border:1px solid #cbd5e1;color:#334155;font-size:.78rem;font-weight:600;padding:5px 10px;border-radius:50px;cursor:pointer}
+.chip:hover{background:#e0f2fe;border-color:#00A8E8;color:#0056D2}
+.addons-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+.addon-label{display:flex;align-items:center;gap:7px;cursor:pointer;font-size:.84rem;background:#f8fafc;padding:8px 10px;border-radius:8px;border:1px solid #e2e8f0;font-weight:500}
+.total-box{background:#0B132B;color:#fff;padding:16px;border-radius:12px;margin:16px 0}
+.total-row{display:flex;justify-content:space-between;font-size:.88rem;color:#cbd5e1;margin-bottom:6px}
+.total-main{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #1e293b;padding-top:10px;margin-top:6px}
+.total-main span:last-child{color:#4ADE80;font-size:1.45rem;font-weight:800}
+.section-wrap{max-width:1100px;margin:auto;padding:25px 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.feature{background:#fff;padding:22px;border-radius:15px;border:1px solid #e2e8f0}
+.feature h3{margin-top:0;color:#0047AB}
+.bulk-banner{background:linear-gradient(135deg,#0B132B 0%,#003d82 100%);color:#fff;border-radius:20px;padding:30px;display:grid;grid-template-columns:1.4fr .6fr;gap:24px;align-items:center;box-shadow:0 10px 25px rgba(11,19,43,.15)}
+.bulk-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.bulk-tag{background:rgba(255,255,255,.12);color:#4ADE80;font-size:.8rem;font-weight:600;padding:5px 12px;border-radius:50px}
+.gallery-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e2e8f0;box-shadow:0 4px 15px rgba(0,0,0,.04)}
+.gallery-card img{width:100%;height:230px;object-fit:cover;display:block;background:#e2e8f0}
+.gallery-caption{padding:16px}
+.gallery-caption h4{margin:0 0 6px;color:#0047AB}
+.gallery-caption p{margin:0;font-size:.9rem;color:#64748b}
+footer{background:#060B19;color:#94a3b8;padding:40px 20px;text-align:center;margin-top:40px}
+footer a{color:#00A8E8;text-decoration:none}
+@media(max-width:768px){.hero,.bulk-banner{grid-template-columns:1fr}.addons-grid{grid-template-columns:1fr}header{flex-wrap:wrap;justify-content:center}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="logo">⚡ BX energies</div>
-  <div id="live-status" class="status-pill status-open">
-    <span class="dot dot-open"></span> Checking hours...
-  </div>
-  <a href="https://wa.me." target="_blank" class="btn" style="padding: 9px 18px; font-size: 0.9rem;">Order Gas</a>
+  <span id="live-status" class="status-pill status-open"><span class="dot dot-open"></span> Checking hours...</span>
+  <a href="https://wa.me." target="_blank" class="btn" style="padding:9px 18px;font-size:.9rem">Order Gas</a>
 </header>
 
 <section class="hero">
-  <div>
-    <p style="color:#0056D2; font-weight:bold; margin-top:0;">📍 Amagba Junction, Amagba GRA, BIU & Benin City</p>
-    <h1 style="font-size:2.15rem; margin:10px 0; line-height:1.25;">Precision-Weighed Cooking Gas Delivered Fast.</h1>
-    <p style="color:#64748b;">100% digitally metered LPG refills, brand-new cylinders & accessories, and free home safety leak checks. Open Mon–Sat (7am–9pm) & Sunday (10am–9pm).</p>
-    <div style="margin-top: 18px;">
-      <a href="https://wa.me." target="_blank" class="btn">📲 Chat on WhatsApp</a>
-    </div>
-
-    <div class="hero-img-wrap">
+  <section>
+    <p style="color:#0056D2;font-weight:700;margin-top:0">📍 Amagba Junction, Amagba GRA, BIU & Benin City</p>
+    <h1 style="font-size:2.15rem;margin:10px 0;line-height:1.25">Precision-Weighed Cooking Gas Delivered Fast.</h1>
+    <p style="color:#64748b">100% digitally metered LPG refills, brand-new cylinders & accessories, and free home safety leak checks. Open Mon–Sat (7am–9pm) & Sunday (10am–9pm).</p>
+    <p style="margin-top:18px"><a href="https://wa.me." target="_blank" class="btn">📲 Chat on WhatsApp</a></p>
+    <figure class="hero-img-wrap" style="margin-left:0;margin-right:0">
       <img src="plant-day.jpg" alt="BX Energies 1.5MT LPG Refilling Plant at Amagba Junction" onerror="this.src='https://placehold.co'">
-      <span class="img-badge">🏭 1.5MT Plant • Amagba Junction</span>
-    </div>
-  </div>
+      <figcaption class="img-badge">🏭 1.5MT Plant • Amagba Junction</figcaption>
+    </figure>
+  </section>
 
-  <!-- Calculator Card -->
   <article class="card">
-    <h3 style="margin-top:0; margin-bottom:12px; color:#0B132B;">Instant Refill & Cylinder Calculator (₦1,350/kg)</h3>
+    <h3 style="margin-top:0;margin-bottom:12px;color:#0B132B">Instant Refill & Cylinder Calculator (₦1,350/kg)</h3>
     
-    <div class="presets">
-      <button type="button" class="p-btn" onclick="setKg(6, this)">6 kg</button>
-      <button type="button" class="p-btn active" onclick="setKg(12.5, this)">12.5 kg</button>
-      <button type="button" class="p-btn" onclick="setKg(25, this)">25 kg</button>
-      <button type="button" class="p-btn" onclick="setKg(50, this)">50 kg</button>
-    </div>
+    <p class="presets">
+      <button type="button" class="p-btn" onclick="setKg(6,this)">6 kg</button>
+      <button type="button" class="p-btn active" onclick="setKg(12.5,this)">12.5 kg</button>
+      <button type="button" class="p-btn" onclick="setKg(25,this)">25 kg</button>
+      <button type="button" class="p-btn" onclick="setKg(50,this)">50 kg</button>
+    </p>
 
-    <div class="two-col">
-      <div>
+    <section class="two-col">
+      <p style="margin:0">
         <label class="field-label" for="kg">Weight (KG):</label>
         <input type="number" id="kg" value="12.5" step="0.1" oninput="fromKg()">
-      </div>
-      <div>
+      </p>
+      <p style="margin:0">
         <label class="field-label" for="amt">Gas Budget (₦):</label>
         <input type="number" id="amt" value="16875" step="500" oninput="fromAmt()">
-      </div>
-    </div>
+      </p>
+    </section>
 
-    <!-- New Cylinder Purchase Option -->
-    <div class="cyl-box">
-      <label class="cyl-toggle">
-        <input type="checkbox" id="buyCyl" onchange="toggleCylSelect()"> Need a Brand-New Cylinder?
-      </label>
-      <div id="cylSelectWrap" style="display:none; margin-top:10px;">
-        <select id="cylSize" onchange="calc()" style="margin-bottom:0;">
+    <section class="cyl-box">
+      <label class="cyl-toggle"><input type="checkbox" id="buyCyl" onchange="toggleCylSelect()"> Need a Brand-New Cylinder?</label>
+      <p id="cylSelectWrap" style="display:none;margin:10px 0 0">
+        <select id="cylSize" onchange="calc()" style="margin-bottom:0">
           <option value="18000" data-label="New 6kg Cylinder">6kg Empty Cylinder (+₦18,000)</option>
           <option value="28000" data-label="New 12.5kg Cylinder" selected>12.5kg Empty Cylinder (+₦28,000)</option>
           <option value="85000" data-label="New 50kg Cylinder">50kg Commercial Cylinder (+₦85,000)</option>
+        </select>
+      </p>
+    </section>
+
+    <label class="field-label">Service Option:</label>
+    <section class="two-col" style="margin-bottom:14px">
+      <button type="button" class="s-btn active" id="btnDel" onclick="setService(true)">🚚 Pickup + Delivery (₦2,000)</button>
+      <button type="button" class="s-btn" id="btnWalk" onclick="setService(false)">⛽ Plant Walk-In (₦0)</button>
+    </section>
+
+    <section id="addrWrap">
+      <label class="field-label" for="addr">Your Estate / Street:</label>
+      <p class="chips-wrap">
+        <button type="button" class="chip" onclick="pickArea('Amagba Junction')">Amagba Junction</button>
+        <button type="button" class="chip" onclick="pickArea('Amagba GRA')">Amagba GRA</button>
+        <button type="button" class="chip" onclick="pickArea('BIU Axis')">BIU Axis</button>
+        <button type="button" class="chip" onclick="pickArea('Limit Road')">Limit Road</button>
+        <button type="button" class="chip" onclick="pickArea('Aruogba')">Aruogba</button>
