@@ -148,7 +148,7 @@ footer a{color:#00A8E8;text-decoration:none}
 <header>
   <div class="logo">⚡ BX energies</div>
   <span id="live-status" class="status">🟢 Open Now</span>
-  <a href="https://wa.me/2349038098658" class="btn" style="padding:8px 16px;font-size:.85rem">Order Gas</a>
+  <a href="https://api.whatsapp.com/send?phone=2349038098658" class="btn" style="padding:8px 16px;font-size:.85rem">Order Gas</a>
 </header>
 
 <main>
@@ -158,7 +158,7 @@ footer a{color:#00A8E8;text-decoration:none}
       <p style="color:#0056D2;font-weight:700;margin:0 0 6px">📍 Amagba Junction • Amagba GRA • BIU • Benin City</p>
       <h1 style="font-size:2.05rem;margin:0 0 12px;line-height:1.2;font-weight:800">Precision-Weighed Cooking Gas Delivered Fast.</h1>
       <p style="color:#64748b;margin-bottom:18px">100% digitally metered LPG refills at <strong>₦1,350/kg</strong>, brand-new cylinders & accessories, plus free home safety leak checks. Open Mon–Sat 7am–9pm & Sun 10am–9pm.</p>
-      <a href="https://wa.me/2349038098658" class="btn">📲 Chat on WhatsApp</a>
+      <a href="https://api.whatsapp.com/send?phone=2349038098658" class="btn">📲 Chat on WhatsApp</a>
 
       <div class="hero-img">
         <img src="plant-day.jpg" alt="BX Energies 1.5MT LPG Cooking Gas Plant at Amagba Junction Benin City" 
@@ -192,7 +192,7 @@ footer a{color:#00A8E8;text-decoration:none}
       <div class="cyl-box">
         <label class="addon">
           <input type="checkbox" id="newCyl" onchange="calc()">
-          <span>Add brand-new cylinder (+ ₦18,000 for 12.5kg size)</span>
+          <span id="cylLabel">Add brand-new cylinder (+ ₦18,000)</span>
         </label>
         <p style="font-size:.78rem;color:#15803d;margin-top:4px">Price adjusts automatically based on size selected</p>
       </div>
@@ -219,9 +219,11 @@ footer a{color:#00A8E8;text-decoration:none}
         </div>
       </div>
 
-      <!-- Real <a> tag instead of button + window.open (works reliably on mobile) -->
-      <a id="orderBtn" href="https://wa.me/2349038098658" class="btn" style="width:100%;padding:14px;font-size:1rem;display:block;text-align:center">
+      <a id="orderBtn" href="https://api.whatsapp.com/send?phone=2349038098658" class="btn" style="width:100%;padding:14px;font-size:1rem;display:block;text-align:center">
         📲 Order on WhatsApp
+      </a>
+      <a href="tel:+2349038098658" class="btn-sec" style="margin-top:10px;display:block;text-align:center">
+        📞 Call +234 903 809 8658
       </a>
       <p style="font-size:.78rem;color:#64748b;margin-top:10px;text-align:center">
         Free home safety leak check with every delivery
@@ -275,7 +277,7 @@ footer a{color:#00A8E8;text-decoration:none}
         <span class="tag">Commercial</span>
       </div>
       <div>
-        <a href="https://wa.me/2349038098658?text=Hi%20BX%20Energies%2C%20I%20need%20bulk%20cooking%20gas%20supply" class="btn" style="width:100%">Request Bulk Quote</a>
+        <a href="https://api.whatsapp.com/send?phone=2349038098658&text=Hi%20BX%20Energies%2C%20I%20need%20bulk%20cooking%20gas%20supply" class="btn" style="width:100%">Request Bulk Quote</a>
       </div>
     </div>
   </section>
@@ -290,7 +292,7 @@ footer a{color:#00A8E8;text-decoration:none}
     <p>Mon–Sat: 7:00 AM – 9:00 PM &nbsp;•&nbsp; Sunday: 10:00 AM – 9:00 PM</p>
 
     <div class="social-links">
-      <a href="https://wa.me/2349038098658">WhatsApp</a>
+      <a href="https://api.whatsapp.com/send?phone=2349038098658">WhatsApp</a>
       <a href="https://instagram.com/bxenergies" target="_blank" rel="noopener">Instagram</a>
       <a href="https://x.com/BXenergies" target="_blank" rel="noopener">X (Twitter)</a>
     </div>
@@ -391,6 +393,10 @@ footer a{color:#00A8E8;text-decoration:none}
     document.getElementById('delCost').textContent = delivery > 0 ? '₦' + delivery.toLocaleString() : 'Free';
     document.getElementById('total').textContent = '₦' + total.toLocaleString();
 
+    // Update cylinder label with correct price for current size
+    const cylPrice = getCylinderPrice(kg);
+    document.getElementById('cylLabel').textContent = `Add brand-new cylinder (+ ₦${cylPrice.toLocaleString()})`;
+
     // Keep the Order button href always up-to-date
     updateOrderLink();
   }
@@ -405,22 +411,21 @@ footer a{color:#00A8E8;text-decoration:none}
     const burner = document.getElementById('burner').checked ? 'Yes' : 'No';
     const svc = service === 'delivery' ? 'Delivery' : 'Pickup';
 
+    // Shorter message to avoid long-URL 4xx errors on some devices
     const msg = `Hello BX Energies 👋
 
-I want to order cooking gas:
-
-• Size: ${kg} kg
-• Quantity: ${qty}
+Order request:
+• ${kg} kg × ${qty}
 • New cylinder: ${newCyl}
-• Regulator: ${reg}
-• Hose: ${hose}
-• Burner: ${burner}
-• Service: ${svc}
-• Estimated Total: ${total}
+• Regulator: ${reg} | Hose: ${hose} | Burner: ${burner}
+• ${svc}
+• Est. Total: ${total}
 
-Please confirm availability and delivery time. Thank you!`;
+Please confirm availability & delivery time. Thank you!`;
 
-    const url = `https://wa.me/2349038098658?text=${encodeURIComponent(msg)}`;
+    // Prefer api.whatsapp.com (more reliable)
+    const encoded = encodeURIComponent(msg);
+    const url = `https://api.whatsapp.com/send?phone=2349038098658&text=${encoded}`;
     document.getElementById('orderBtn').href = url;
   }
 
@@ -428,4 +433,4 @@ Please confirm availability and delivery time. Thank you!`;
   calc();
 </script>
 </body>
-</html>
+  </html>
