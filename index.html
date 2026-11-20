@@ -222,4 +222,209 @@ footer a{color:#00A8E8;text-decoration:none}
       <button class="btn" style="width:100%;padding:14px;font-size:1rem" onclick="orderWhatsApp()">
         📲 Order on WhatsApp
       </button>
-      <p style="font-size
+      <p style="font-size:.78rem;color:#64748b;margin-top:10px;text-align:center">
+        Free home safety leak check with every delivery
+      </p>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="wrap">
+    <h2 class="section-title">Why Benin City trusts BX Energies</h2>
+    <p class="section-sub">Digitally metered. Transparent. Fast.</p>
+    <div class="grid3">
+      <div class="box">
+        <h3>⚖️ Exact Digital Weight</h3>
+        <p>Every refill is weighed on a certified digital scale. You pay only for the exact kilograms you receive — no guesswork.</p>
+      </div>
+      <div class="box">
+        <h3>🚚 Fast Doorstep Delivery</h3>
+        <p>Flat ₦2,000 delivery fee across Amagba, GRA, BIU, Limit Road, Aruogba and surrounding areas. Same-day when ordered early.</p>
+      </div>
+      <div class="box">
+        <h3>🛡️ Free Safety Check</h3>
+        <p>Every delivery includes a free home safety leak check so your family stays protected.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  <section class="wrap">
+    <h2 class="section-title">We deliver to</h2>
+    <div class="areas">
+      <span class="area-chip">Amagba Junction</span>
+      <span class="area-chip">Amagba GRA</span>
+      <span class="area-chip">BIU Axis</span>
+      <span class="area-chip">Limit Road</span>
+      <span class="area-chip">Aruogba</span>
+      <span class="area-chip">Sapele Road</span>
+      <span class="area-chip">Benin City & environs</span>
+    </div>
+  </section>
+
+  <!-- BULK -->
+  <section class="wrap">
+    <div class="bulk">
+      <div>
+        <h2 style="font-size:1.5rem;margin-bottom:10px">Need bulk or restaurant supply?</h2>
+        <p style="opacity:.9;margin-bottom:14px">We supply restaurants, hotels, events and commercial kitchens with consistent, digitally metered LPG. Special rates available for high-volume customers.</p>
+        <span class="tag">Restaurants</span>
+        <span class="tag">Hotels</span>
+        <span class="tag">Events</span>
+        <span class="tag">Commercial</span>
+      </div>
+      <div>
+        <a href="https://wa.me/2349038098658?text=Hi%20BX%20Energies%2C%20I%20need%20bulk%20cooking%20gas%20supply" target="_blank" class="btn" style="width:100%">Request Bulk Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+</main>
+
+<footer>
+  <div style="max-width:700px;margin:0 auto">
+    <div class="logo" style="font-size:1.6rem;margin-bottom:12px">⚡ BX energies</div>
+    <p>Amagba Junction, off Sapele Road, Benin City, Edo State</p>
+    <p style="margin:8px 0">📞 <a href="tel:+2349038098658">+234 903 809 8658</a> &nbsp;|&nbsp; ✉️ <a href="mailto:bxenergies@gmail.com">bxenergies@gmail.com</a></p>
+    <p>Mon–Sat: 7:00 AM – 9:00 PM &nbsp;•&nbsp; Sunday: 10:00 AM – 9:00 PM</p>
+
+    <div class="social-links">
+      <a href="https://wa.me/2349038098658" target="_blank">WhatsApp</a>
+      <a href="https://instagram.com/bxenergies" target="_blank">Instagram</a>
+      <a href="https://x.com/BXenergies" target="_blank">X (Twitter)</a>
+    </div>
+
+    <p style="margin-top:28px;font-size:.8rem;opacity:.7">© 2026 BX Energies Nigeria. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Live open/closed status
+  function updateStatus() {
+    const now = new Date();
+    // Convert to WAT (UTC+1)
+    const wat = new Date(now.toLocaleString("en-US", {timeZone: "Africa/Lagos"}));
+    const day = wat.getDay(); // 0=Sun
+    const hour = wat.getHours();
+    const statusEl = document.getElementById('live-status');
+    
+    let open = false;
+    if (day === 0) { // Sunday
+      open = hour >= 10 && hour < 21;
+    } else {
+      open = hour >= 7 && hour < 21;
+    }
+    
+    if (open) {
+      statusEl.textContent = "🟢 Open Now";
+      statusEl.classList.remove('closed');
+    } else {
+      statusEl.textContent = "🔴 Closed";
+      statusEl.classList.add('closed');
+    }
+  }
+  updateStatus();
+  setInterval(updateStatus, 60000);
+
+  let service = 'delivery';
+  const RATE = 1350;
+  const DELIVERY_FEE = 2000;
+
+  // Cylinder prices by size (approximate market)
+  function getCylinderPrice(kg) {
+    if (kg <= 6) return 12000;
+    if (kg <= 12.5) return 18000;
+    if (kg <= 25) return 35000;
+    return 65000; // 50kg
+  }
+
+  function setKg(val, btn) {
+    document.getElementById('kg').value = val;
+    document.querySelectorAll('.p-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    calc();
+  }
+
+  function setService(type, btn) {
+    service = type;
+    document.querySelectorAll('.s-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    calc();
+  }
+
+  function calc() {
+    const kg = parseFloat(document.getElementById('kg').value) || 0;
+    const qty = parseInt(document.getElementById('qty').value) || 1;
+    const gas = kg * RATE * qty;
+
+    let cyl = 0;
+    if (document.getElementById('newCyl').checked) {
+      cyl = getCylinderPrice(kg) * qty;
+    }
+
+    let addons = 0;
+    if (document.getElementById('reg').checked) addons += 4500;
+    if (document.getElementById('hose').checked) addons += 2500;
+    if (document.getElementById('burner').checked) addons += 6500;
+    addons *= qty;
+
+    const delivery = service === 'delivery' ? DELIVERY_FEE : 0;
+    const total = gas + cyl + addons + delivery;
+
+    document.getElementById('gasCost').textContent = '₦' + gas.toLocaleString();
+    
+    const cylRow = document.getElementById('cylRow');
+    if (cyl > 0) {
+      cylRow.style.display = 'flex';
+      document.getElementById('cylCost').textContent = '₦' + cyl.toLocaleString();
+    } else {
+      cylRow.style.display = 'none';
+    }
+
+    const addRow = document.getElementById('addRow');
+    if (addons > 0) {
+      addRow.style.display = 'flex';
+      document.getElementById('addCost').textContent = '₦' + addons.toLocaleString();
+    } else {
+      addRow.style.display = 'none';
+    }
+
+    document.getElementById('delCost').textContent = delivery > 0 ? '₦' + delivery.toLocaleString() : 'Free';
+    document.getElementById('total').textContent = '₦' + total.toLocaleString();
+  }
+
+  function orderWhatsApp() {
+    const kg = document.getElementById('kg').value;
+    const qty = document.getElementById('qty').value;
+    const total = document.getElementById('total').textContent;
+    const newCyl = document.getElementById('newCyl').checked ? 'Yes' : 'No';
+    const reg = document.getElementById('reg').checked ? 'Yes' : 'No';
+    const hose = document.getElementById('hose').checked ? 'Yes' : 'No';
+    const burner = document.getElementById('burner').checked ? 'Yes' : 'No';
+    const svc = service === 'delivery' ? 'Delivery' : 'Pickup';
+
+    const msg = `Hello BX Energies 👋
+
+I want to order cooking gas:
+
+• Size: ${kg} kg
+• Quantity: ${qty}
+• New cylinder: ${newCyl}
+• Regulator: ${reg}
+• Hose: ${hose}
+• Burner: ${burner}
+• Service: ${svc}
+• Estimated Total: ${total}
+
+Please confirm availability and delivery time. Thank you!`;
+
+    const url = `https://wa.me/2349038098658?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+  }
+
+  // Initial calculation
+  calc();
+</script>
+</body>
+</html>
