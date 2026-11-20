@@ -6,7 +6,7 @@
 <title>BX Energies | Cooking Gas Delivery in Amagba & Benin City</title>
 <style>
 body { font-family: system-ui, sans-serif; margin: 0; background: #f8fafc; color: #1e293b; line-height: 1.5; }
-header { background: #fff; padding: 15px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; }
+header { background: #fff; padding: 15px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
 .logo { font-size: 1.5rem; font-weight: 900; background: linear-gradient(135deg, #0047AB, #00A8E8, #4ADE80); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .btn { background: linear-gradient(135deg, #0047AB, #00A8E8, #4ADE80); color: #fff; padding: 12px 22px; border-radius: 50px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; display: inline-block; text-align: center; }
 .hero { padding: 40px 20px; max-width: 1000px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; }
@@ -15,7 +15,8 @@ header { background: #fff; padding: 15px 20px; box-shadow: 0 2px 10px rgba(0,0,0
 .p-btn, .s-btn { padding: 8px; border: 1px solid #cbd5e1; background: #fff; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 0.9rem; }
 .p-btn.active, .s-btn.active { background: #e0f2fe; border-color: #00A8E8; color: #0056D2; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
-input { width: 100%; padding: 10px; margin: 6px 0 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
+input[type="number"], input[type="text"] { width: 100%; padding: 10px; margin: 6px 0 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
+.addon-label { display: flex; align-items: center; gap: 8px; margin: 6px 0; cursor: pointer; font-size: 0.95rem; }
 .total-box { background: #0B132B; color: #fff; padding: 15px; border-radius: 12px; margin: 15px 0; }
 .total-row { display: flex; justify-content: space-between; font-size: 0.9rem; color: #cbd5e1; margin-bottom: 6px; }
 .total-main { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1e293b; padding-top: 8px; margin-top: 6px; }
@@ -31,20 +32,20 @@ footer a { color: #00A8E8; text-decoration: none; }
 
 <header>
   <div class="logo">⚡ BX energies</div>
-  <a href="https://wa.me" target="_blank" class="btn">Order Gas</a>
+  <a href="https://wa.me." target="_blank" class="btn">Order Gas</a>
 </header>
 
 <section class="hero">
   <div>
-    <p style="color:#0056D2; font-weight:bold;">📍 Amagba Axis, Amagba GRA, BIU & Benin City</p>
+    <p style="color:#0056D2; font-weight:bold;">📍 Amagba Junction, Amagba GRA, BIU & Benin City</p>
     <h1 style="font-size:2.2rem; margin:10px 0;">Precision-Weighed Cooking Gas Delivered Fast.</h1>
     <p style="color:#64748b;">100% digitally metered LPG refills and free home safety leak checks. Open Mon–Sat (7am–9pm) & Sunday (10am–9pm).</p>
     <br>
-    <a href="https://wa.me?text=Hello%20BX%20Energies!%20I%20want%20to%20order%20gas." target="_blank" class="btn">📲 Chat on WhatsApp</a>
+    <a href="https://wa.me." target="_blank" class="btn">📲 Chat on WhatsApp</a>
   </div>
 
   <div class="card">
-    <h3 style="margin-top:0;">Instant Refill Calculator (₦1,500/kg)</h3>
+    <h3 style="margin-top:0;">Instant Refill Calculator (₦1,350/kg)</h3>
     <div class="presets">
       <button type="button" class="p-btn" onclick="setKg(6, this)">6 kg</button>
       <button type="button" class="p-btn active" onclick="setKg(12.5, this)">12.5 kg</button>
@@ -59,7 +60,7 @@ footer a { color: #00A8E8; text-decoration: none; }
       </div>
       <div>
         <label><b>Gas Budget (₦):</b></label>
-        <input type="number" id="amt" value="18750" step="500" oninput="fromAmt()">
+        <input type="number" id="amt" value="16875" step="500" oninput="fromAmt()">
       </div>
     </div>
 
@@ -74,21 +75,25 @@ footer a { color: #00A8E8; text-decoration: none; }
       <input type="text" id="addr" placeholder="e.g., Amagba GRA, BIU Axis...">
     </div>
 
-    <label><input type="checkbox" id="oring" style="width:auto;" onchange="calc()"> Add Valve O-Ring (+₦200)</label><br>
-    <label><input type="checkbox" id="hose" style="width:auto;" onchange="calc()"> Add Heavy-Duty Hose (+₦3,500)</label>
+    <label class="addon-label"><input type="checkbox" id="oring" onchange="calc()"> Add Valve O-Ring (+₦200)</label>
+    <label class="addon-label"><input type="checkbox" id="hose" onchange="calc()"> Add Heavy-Duty Hose (+₦3,500)</label>
 
     <div class="total-box">
       <div class="total-row">
         <span>Gas Cost:</span>
-        <span id="gasCost">₦18,750</span>
+        <span id="gasCost">₦16,875</span>
       </div>
       <div class="total-row">
         <span id="delLabel">Pickup + Delivery:</span>
         <span id="delCost">₦2,000</span>
       </div>
+      <div class="total-row" id="addonRow" style="display:none;">
+        <span>Accessories:</span>
+        <span id="addonCost">₦0</span>
+      </div>
       <div class="total-main">
         <span>Total Payable:</span>
-        <span id="total">₦20,750</span>
+        <span id="total">₦18,875</span>
       </div>
     </div>
 
@@ -113,14 +118,16 @@ footer a { color: #00A8E8; text-decoration: none; }
 
 <footer>
   <h3 style="color:#4ADE80;">BX Energies Nigeria</h3>
+  <p>📍 Plant Location: Amagba Junction, Benin City</p>
   <p>🕒 Mon – Sat: 7:00 AM – 9:00 PM | Sunday: 10:00 AM – 9:00 PM</p>
   <p>📞 WhatsApp: <a href="https://wa.me" target="_blank">+234 903 809 8658</a> | ✉️ <a href="mailto:bxenergies@gmail.com">bxenergies@gmail.com</a></p>
   <p>📸 Instagram: <a href="https://instagram.com" target="_blank">@bxenergies</a> | 🐦 X: <a href="https://x.com" target="_blank">@BXenergies</a></p>
 </footer>
 
 <script>
-const RATE = 1500;
+const RATE = 1350;
 const DELIVERY_FEE = 2000;
+const WHATSAPP_NUM = "2349038098658";
 let isDelivery = true;
 
 function setKg(val, btn) {
@@ -155,9 +162,19 @@ function fromAmt() {
 
 function calc() {
   let gas = parseFloat(document.getElementById('amt').value) || 0;
-  let sum = gas + (isDelivery ? DELIVERY_FEE : 0);
-  if(document.getElementById('oring').checked) sum += 200;
-  if(document.getElementById('hose').checked) sum += 3500;
+  let addons = 0;
+  if (document.getElementById('oring').checked) addons += 200;
+  if (document.getElementById('hose').checked) addons += 3500;
+
+  let addonRow = document.getElementById('addonRow');
+  if (addons > 0) {
+    addonRow.style.display = 'flex';
+    document.getElementById('addonCost').innerText = '₦' + addons.toLocaleString();
+  } else {
+    addonRow.style.display = 'none';
+  }
+
+  let sum = gas + (isDelivery ? DELIVERY_FEE : 0) + addons;
   document.getElementById('gasCost').innerText = '₦' + Math.round(gas).toLocaleString();
   document.getElementById('total').innerText = '₦' + Math.round(sum).toLocaleString();
 }
@@ -165,11 +182,24 @@ function calc() {
 function order() {
   let kg = document.getElementById('kg').value;
   let gas = document.getElementById('gasCost').innerText;
-  let tot = document.getElementById('total').innerText;
-  let srv = isDelivery ? `🚚 Pickup + Delivery: ₦2,000%0A📍 Location: ${document.getElementById('addr').value || 'Amagba / Benin City'}` : '⛽ Service: Plant Walk-In (₦0)';
-  let msg = `Hello BX Energies! 🔥%0AI want to order *${kg}kg* of cooking gas (${gas}).%0A${srv}%0A💰 Total Payable: ${tot}`;
-  window.open(`https://wa.me?text=${msg}`, '_blank');
-}
-</script>
-</body>
-    </html>
+  let total = document.getElementById('total').innerText;
+  let addr = document.getElementById('addr').value.trim();
+
+  if (isDelivery && !addr) {
+    alert("Please enter your Estate or Street address for Pickup + Delivery.");
+    document.getElementById('addr').focus();
+    return;
+  }
+
+  let addons = [];
+  if (document.getElementById('oring').checked) addons.push("Valve O-Ring (₦200)");
+  if (document.getElementById('hose').checked) addons.push("Heavy-Duty Hose (₦3,500)");
+
+  let msg = `Hello BX Energies! I'd like to place a gas order:\n\n`;
+  msg += `• Quantity: ${kg} kg (${gas})\n`;
+  msg += `• Service: ${isDelivery ? 'Pickup + Delivery (₦2,000)' : 'Plant Walk-In at Amagba Junction'}\n`;
+  if (isDelivery) msg += `• Address: ${addr}\n`;
+  if (addons.length > 0) msg += `• Add-ons: ${addons.join(', ')}\n`;
+  msg += `\n*Total Payable: ${total}*`;
+
+  window.open(`https://wa.me{WHATSAPP_NUM}?text=${encodeURIComponent(msg)}`, '_blank');
