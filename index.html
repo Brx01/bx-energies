@@ -148,7 +148,7 @@ footer a{color:#00A8E8;text-decoration:none}
 <header>
   <div class="logo">⚡ BX energies</div>
   <span id="live-status" class="status">🟢 Open Now</span>
-  <a href="https://wa.me/2349038098658" target="_blank" rel="noopener noreferrer" class="btn" style="padding:8px 16px;font-size:.85rem">Order Gas</a>
+  <a href="https://wa.me/2349038098658" class="btn" style="padding:8px 16px;font-size:.85rem">Order Gas</a>
 </header>
 
 <main>
@@ -158,7 +158,7 @@ footer a{color:#00A8E8;text-decoration:none}
       <p style="color:#0056D2;font-weight:700;margin:0 0 6px">📍 Amagba Junction • Amagba GRA • BIU • Benin City</p>
       <h1 style="font-size:2.05rem;margin:0 0 12px;line-height:1.2;font-weight:800">Precision-Weighed Cooking Gas Delivered Fast.</h1>
       <p style="color:#64748b;margin-bottom:18px">100% digitally metered LPG refills at <strong>₦1,350/kg</strong>, brand-new cylinders & accessories, plus free home safety leak checks. Open Mon–Sat 7am–9pm & Sun 10am–9pm.</p>
-      <a href="https://wa.me/2349038098658" target="_blank" rel="noopener noreferrer" class="btn">📲 Chat on WhatsApp</a>
+      <a href="https://wa.me/2349038098658" class="btn">📲 Chat on WhatsApp</a>
 
       <div class="hero-img">
         <img src="plant-day.jpg" alt="BX Energies 1.5MT LPG Cooking Gas Plant at Amagba Junction Benin City" 
@@ -219,9 +219,10 @@ footer a{color:#00A8E8;text-decoration:none}
         </div>
       </div>
 
-      <button class="btn" style="width:100%;padding:14px;font-size:1rem" onclick="orderWhatsApp()">
+      <!-- Real <a> tag instead of button + window.open (works reliably on mobile) -->
+      <a id="orderBtn" href="https://wa.me/2349038098658" class="btn" style="width:100%;padding:14px;font-size:1rem;display:block;text-align:center">
         📲 Order on WhatsApp
-      </button>
+      </a>
       <p style="font-size:.78rem;color:#64748b;margin-top:10px;text-align:center">
         Free home safety leak check with every delivery
       </p>
@@ -274,12 +275,11 @@ footer a{color:#00A8E8;text-decoration:none}
         <span class="tag">Commercial</span>
       </div>
       <div>
-        <a href="https://wa.me/2349038098658?text=Hi%20BX%20Energies%2C%20I%20need%20bulk%20cooking%20gas%20supply" target="_blank" class="btn" style="width:100%">Request Bulk Quote</a>
+        <a href="https://wa.me/2349038098658?text=Hi%20BX%20Energies%2C%20I%20need%20bulk%20cooking%20gas%20supply" class="btn" style="width:100%">Request Bulk Quote</a>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT / FOOTER -->
 </main>
 
 <footer>
@@ -290,9 +290,9 @@ footer a{color:#00A8E8;text-decoration:none}
     <p>Mon–Sat: 7:00 AM – 9:00 PM &nbsp;•&nbsp; Sunday: 10:00 AM – 9:00 PM</p>
 
     <div class="social-links">
-      <a href="https://wa.me/2349038098658" target="_blank">WhatsApp</a>
-      <a href="https://instagram.com/bxenergies" target="_blank">Instagram</a>
-      <a href="https://x.com/BXenergies" target="_blank">X (Twitter)</a>
+      <a href="https://wa.me/2349038098658">WhatsApp</a>
+      <a href="https://instagram.com/bxenergies" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://x.com/BXenergies" target="_blank" rel="noopener">X (Twitter)</a>
     </div>
 
     <p style="margin-top:28px;font-size:.8rem;opacity:.7">© 2026 BX Energies Nigeria. All rights reserved.</p>
@@ -303,14 +303,13 @@ footer a{color:#00A8E8;text-decoration:none}
   // Live open/closed status
   function updateStatus() {
     const now = new Date();
-    // Convert to WAT (UTC+1)
     const wat = new Date(now.toLocaleString("en-US", {timeZone: "Africa/Lagos"}));
-    const day = wat.getDay(); // 0=Sun
+    const day = wat.getDay();
     const hour = wat.getHours();
     const statusEl = document.getElementById('live-status');
     
     let open = false;
-    if (day === 0) { // Sunday
+    if (day === 0) {
       open = hour >= 10 && hour < 21;
     } else {
       open = hour >= 7 && hour < 21;
@@ -331,12 +330,11 @@ footer a{color:#00A8E8;text-decoration:none}
   const RATE = 1350;
   const DELIVERY_FEE = 2000;
 
-  // Cylinder prices by size (approximate market)
   function getCylinderPrice(kg) {
     if (kg <= 6) return 12000;
     if (kg <= 12.5) return 18000;
     if (kg <= 25) return 35000;
-    return 65000; // 50kg
+    return 65000;
   }
 
   function setKg(val, btn) {
@@ -392,9 +390,12 @@ footer a{color:#00A8E8;text-decoration:none}
 
     document.getElementById('delCost').textContent = delivery > 0 ? '₦' + delivery.toLocaleString() : 'Free';
     document.getElementById('total').textContent = '₦' + total.toLocaleString();
+
+    // Keep the Order button href always up-to-date
+    updateOrderLink();
   }
 
-  function orderWhatsApp() {
+  function updateOrderLink() {
     const kg = document.getElementById('kg').value;
     const qty = document.getElementById('qty').value;
     const total = document.getElementById('total').textContent;
@@ -420,11 +421,11 @@ I want to order cooking gas:
 Please confirm availability and delivery time. Thank you!`;
 
     const url = `https://wa.me/2349038098658?text=${encodeURIComponent(msg)}`;
-    window.open(url, '_blank');
+    document.getElementById('orderBtn').href = url;
   }
 
   // Initial calculation
   calc();
 </script>
 </body>
-</html>
+  </html>
