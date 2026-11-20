@@ -15,6 +15,7 @@ header{background:#fff;padding:12px 16px;box-shadow:0 2px 10px rgba(0,0,0,.06);d
 .status{font-size:.75rem;font-weight:700;padding:4px 10px;border-radius:50px;background:#dcfce7;color:#15803d;border:1px solid #86efac}
 .status.closed{background:#fee2e2;color:#b91c1c;border-color:#fca5a5}
 .btn{background:linear-gradient(135deg,#0047AB,#00A8E8,#4ADE80);color:#fff;padding:11px 20px;border-radius:50px;text-decoration:none;font-weight:700;border:none;cursor:pointer;display:inline-block;text-align:center}
+.btn-sec{background:#f1f5f9;color:#0f172a;border:1px solid #cbd5e1;padding:10px 16px;border-radius:50px;font-weight:700;cursor:pointer;font-size:.88rem;width:100%;margin-top:8px}
 .wrap{max-width:1080px;margin:auto;padding:24px 16px}
 .hero{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
 .hero-img{margin-top:18px;border-radius:16px;overflow:hidden;border:3px solid #fff;box-shadow:0 8px 20px rgba(0,71,171,.15);position:relative}
@@ -50,7 +51,7 @@ footer a{color:#00A8E8;text-decoration:none}
 <header>
   <div class="logo">⚡ BX energies</div>
   <span id="live-status" class="status">🟢 Open Now</span>
-  <a href="https://whatsapp.com." target="_blank" rel="noopener noreferrer" class="btn" style="padding:8px 16px;font-size:.85rem">Order Gas</a>
+  <button type="button" onclick="openWA('Hello BX Energies! I would like to order cooking gas.')" class="btn" style="padding:8px 16px;font-size:.85rem">Order Gas</button>
 </header>
 
 <div class="wrap hero">
@@ -58,7 +59,7 @@ footer a{color:#00A8E8;text-decoration:none}
     <p style="color:#0056D2;font-weight:700;margin:0">📍 Amagba Junction, Amagba GRA, BIU & Benin City</p>
     <h1 style="font-size:2rem;margin:8px 0;line-height:1.2">Precision-Weighed Cooking Gas Delivered Fast.</h1>
     <p style="color:#64748b">100% digitally metered LPG refills, brand-new cylinders & accessories, and free home safety leak checks. Open Mon–Sat (7am–9pm) & Sun (10am–9pm).</p>
-    <a href="https://whatsapp.com!" target="_blank" rel="noopener noreferrer" class="btn">📲 Chat on WhatsApp</a>
+    <button type="button" onclick="openWA('Hello BX Energies!')" class="btn">📲 Chat on WhatsApp</button>
     <div class="hero-img">
       <img src="plant-day.jpg" alt="BX Energies Plant" onerror="this.src='https://placehold.co'">
       <span class="badge">🏭 1.5MT Plant • Amagba Junction</span>
@@ -127,9 +128,9 @@ footer a{color:#00A8E8;text-decoration:none}
       <div class="t-main"><span>Total Payable:</span><span id="total">₦18,875</span></div>
     </div>
 
-    <a id="waOrderBtn" href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" onclick="return checkOrder()" class="btn" style="width:100%">📲 Send Order via WhatsApp</a>
+    <button type="button" onclick="sendOrder()" class="btn" style="width:100%">📲 Send Order via WhatsApp</button>
+    <button type="button" onclick="copyOrder()" id="copyBtn" class="btn-sec">📋 Copy Order Summary</button>
   </div>
 </div>
 
 <div class="wrap grid3">
-  <div class="box"><h3 style="margin-top:0;color:#0047AB">⚖️ Zero Under-Filling</h3><p style="margin:0">Weighed empty and re-weighed after filling on calibrated digital scales so you get exact value.</p></div>
